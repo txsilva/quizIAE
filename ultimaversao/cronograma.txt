@@ -1,0 +1,6 @@
+Cronograma
+
+24/05 e 25/05 .Entregar a implementação da tela inicial e tela da primeira pergunta com interação da primeira pergunta;
+              .Entregar a parte escrita: introdução, justificativa, objetivo geral, objetivo específico, motivação, descrição do aplicativo e descrição das funcionalidades;
+              
+26/05         .Entregar a implementação da segunda tela de pergunta com interação da primeira pergunta;
