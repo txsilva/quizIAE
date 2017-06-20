@@ -66,8 +66,49 @@
     left: 550px;
     top: 550px;
 }
+#drag1 {
+    width: 224px;
+    height: 66px;
+    padding: 10px;
+    position: absolute;
+    left: 500px;
+    top: 450px;
+}
+#drag2 {
+    width: 224px;
+    height: 66px;
+    padding: 10px;
+    position: absolute;
+    left: 735px;
+    top: 450px;
+}
+#drag3 {
+    width: 224px;
+    height: 66px;
+    padding: 10px;
+    position: absolute;
+    left: 500px;
+    top: 530px;
+}
+#drag4 {
+    width: 224px;
+    height: 66px;
+    padding: 10px;
+    position: absolute;
+    left: 735px;
+    top: 530px;
+}
+#drag5 {
+    width: 224px;
+    height: 66px;
+    padding: 10px;
+    position: absolute;
+    left: 500px;
+    top: 610px;
+}
 </style>
 <script>
+var count = 0;
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -76,10 +117,22 @@ function dragenter_handler(ev) {
  	ev.currentTarget.style.border = "yellow";
 }
 
+function myFunction20() {
+    alert("Não pode mudar uma opção de lugar.");
+}
+
 function drag(ev) {
 	
     ev.dataTransfer.setData("text", ev.target.id);
+	myFunction2();
     
+}
+
+function myFunction() {
+   document.write("<input type=\"submit\" value=\"Avançar\"></form>");
+}
+function myFunction1() {
+    alert("Não pode mudar uma opção de lugar.");
 }
 
 function drop(ev) {
@@ -87,7 +140,8 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
     if (data == "drag3"){
-    	ev.currentTarget.style.background = "#98FB98";
+    	ev.currentTarget.style.background = "yellow";
+		myFunction();
     }else{
     	ev.currentTarget.style.background = "#FF6347";
     }
@@ -100,22 +154,23 @@ function dragleave_handler(ev) {
 function dragstart_handler(ev) {
  	ev.dataTransfer.setData("text", ev.target.id);
  	ev.currentTarget.style.background = "white";
+	myFunction1();
 }
 
 </script>
 </head>
 <body>
 <div id="container">
-<h1>Qual a primeira tag do html? Marque a opção e arraste essa tag para o local adequado nos espaços do lado direito.</h1>
+<h2>Marque a opção e arraste essa tag para o local adequado nos espaços do lado direito.</h2>
+<h1>Qual a primeira tag do html?</h1>
 <div id="esquerda">
 <form action="segunda.html" method="post">
-<input type="radio" name="q1" value="opcao"><img id="drag1" src="fechahtml.png" draggable="true" ondragstart="drag(event)" width="336" height="100"><br></input>
-<input type="radio" name="q1" value="opcao"><img id="drag2" src="head.png" draggable="true" ondragstart="drag(event)" width="336" height="100"><br></input>
-<input type="radio" name="q1" value="opcao"><img id="drag3" src="html.png" draggable="true" ondragstart="drag(event)" width="336" height="100"><br></input>
-<input type="radio" name="q1" value="opcao"><img id="drag4" src="fechatitle.png" draggable="true" ondragstart="drag(event)" width="336" height="100"><br></input>
-<input type="radio" name="q1" value="opcao"><img id="drag5" src="body.png" draggable="true" ondragstart="drag(event)" width="336" height="100"><br></input>
-<input type="submit" value="Avançar">
-</form>
+<input type="radio" name="q1" value="opcao1"><img src="fechahtml.png" width="336" height="100"><br></input>
+<input type="radio" name="q1" value="opcao2"><img src="head.png" width="336" height="100"><br></input>
+<input type="radio" name="q1" value="opcao3"><img src="html.png" width="336" height="100"><br></input>
+<input type="radio" name="q1" value="opcao4"><img src="fechatitle.png" width="336" height="100"><br></input>
+<input type="radio" name="q1" value="opcao5"><img src="body.png" width="336" height="100"><br></input>
+
 </div>
 <div id="direita">
 <div id="div1" ondrop="drop(event)" ondragenter="dragenter_handler(event)" ondragleave="dragleave_handler(event)" ondragover="allowDrop(event)" ondragstart="dragstart_handler(event)"></div>
@@ -123,8 +178,12 @@ function dragstart_handler(ev) {
 <div id="div3" ondrop="drop(event)" ondragenter="dragenter_handler(event)" ondragleave="dragleave_handler(event)" ondragover="allowDrop(event)" ondragstart="dragstart_handler(event)"></div>
 <!--<div id="div4" ondrop="drop(event)" ondragenter="dragenter_handler(event)" ondragleave="dragleave_handler(event)" ondragover="allowDrop(event)" ondragstart="dragstart_handler(event)"></div>
 <div id="div5" ondrop="drop(event)" ondragenter="dragenter_handler(event)" ondragleave="dragleave_handler(event)" ondragover="allowDrop(event)" ondragstart="dragstart_handler(event)"></div> -->
-<br>
-<br>
+<img id="drag1" src="fechahtml.png" draggable="true" ondragstart="drag(event)" width="224" height="66">
+<img id="drag2" src="head.png" draggable="true" ondragstart="drag(event)" width="224" height="66">
+<img id="drag3" src="html.png" draggable="true" ondragstart="drag(event)" width="224" height="66">
+<img id="drag4" src="fechatitle.png" draggable="true" ondragstart="drag(event)" width="224" height="66">
+<img id="drag5" src="body.png" draggable="true" ondragstart="drag(event)" width="224" height="66">
+
 </div>
 </div>
 
